@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # --- Backend Servisi (Django) ---
+  backend:
+    build: ./backend
+    container_name: djangotube_backend
+    volumes:
+      - ./backend:/app # Koddaki değişikliği anında yansıt (Hot Reload)
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      # Veritabanı ayarları buraya eklenebilir
+
+  # --- Frontend Servisi (React) ---
+  frontend:
+    build: ./frontend
+    container_name: djangotube_frontend
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # node_modules'u ezmemesi için
+    ports:
+      - "3000:3000"
+    stdin_open: true # React'in interaktif modu için gerekli
+    tty: true
+    depends_on:
+      - backend # Backend başlamadan frontend başlamasın
+
+  # --- Prometheus Servisi ---
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: djangotube_prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - backend
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: djangotube_grafana
+    ports:
+      - "3001:3000" # Grafana'yı 3001 portundan açacağız (3000'de React var)
+    depends_on:
+      - prometheus
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin # Giriş şifresi

@@ -1,0 +1,461 @@
+/* --- Genel Stil Ayarları --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0F172A; 
+  color: #E2E8F0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* Navbar'ımız */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1E293B;
+  border-bottom: 1px solid #334155;
+  font-size: 1.1rem;
+}
+.navbar-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Navbar'daki "Çıkış Yap" butonu için */
+.nav-link-button {
+  background: none;
+  border: none;
+  color: #E2E8F0;
+  font-family: inherit;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.nav-link-button:hover {
+  color: #38BDF8;
+}
+.nav-link-welcome {
+  color: #94A3B8;
+}
+.main-container {
+  display: flex;
+  height: calc(100vh - 65px);
+}
+/* Sidebar'ımız */
+.sidebar {
+  width: 160px;
+  background-color: #1E293B;
+  padding: 1.5rem;
+}
+.sidebar-links li {
+  list-style-type: none;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+}
+.sidebar-links li a:hover {
+  color: #38BDF8;
+}
+/* Değişken İçerik Alanı */
+.content-area {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+/* --- Video Izgara (Grid) Stilleri --- */
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+/* --- Video Kartı (VideoCard) Stilleri --- */
+.video-card {
+  display: block;
+}
+.video-thumbnail {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  background-color: #334155;
+}
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-details {
+  display: flex;
+  gap: 0.75rem;
+}
+.uploader-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #475569;
+  color: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.video-info {
+  display: flex;
+  flex-direction: column;
+}
+.video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  margin: 0 0 0.25rem 0;
+}
+.uploader-name,
+.video-stats {
+  font-size: 0.9rem;
+  color: #94A3B8; /* Daha soluk gri */
+  margin: 0;
+}
+/* --- Login ve Signup Form Stilleri --- */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5rem;
+  width: 100%;
+}
+.auth-form {
+  width: 100%;
+  max-width: 450px;
+  padding: 2.5rem;
+  background-color: #1E293B;
+  border-radius: 12px;
+  border: 1px solid #334155;
+}
+.auth-form h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #F8FAFC;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #CBD5E1;
+  margin-bottom: 0.5rem;
+}
+.form-group input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #E2E8F0;
+  background-color: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  box-sizing: border-box; 
+}
+.auth-button {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #38BDF8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.auth-button:hover {
+  background-color: #0EA5E9;
+}
+.auth-button:disabled {
+  background-color: #475569;
+  cursor: not-allowed;
+}
+.auth-switch {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #94A3B8;
+}
+.auth-switch a {
+  color: #38BDF8;
+  font-weight: 500;
+}
+/* UploadPage - Textarea stili */
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #E2E8F0;
+  background-color: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  box-sizing: border-box; 
+  font-family: inherit;
+  resize: vertical;
+}
+/* UploadPage - Dosya input stili */
+.form-group-file {
+  margin-bottom: 1.5rem;
+}
+.form-group-file label {
+  display: block;
+  font-size: 1rem;
+  color: #CBD5E1;
+  margin-bottom: 0.5rem;
+}
+.form-group-file input[type="file"] {
+  color: #94A3B8;
+  font-size: 0.9rem;
+}
+/* --- Video Detay Sayfası Stilleri --- */
+.video-detail-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.video-player-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #000;
+  margin-bottom: 1rem;
+}
+.video-player {
+  width: 100%;
+  height: 100%;
+}
+.video-detail-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #F8FAFC;
+  margin-bottom: 1rem;
+}
+.video-detail-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.uploader-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.uploader-meta {
+  display: flex;
+  flex-direction: column;
+}
+.uploader-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #F8FAFC;
+}
+.uploader-stats {
+  font-size: 0.8rem;
+  color: #94A3B8;
+}
+.video-stats {
+  font-size: 0.9rem;
+  color: #94A3B8;
+}
+.video-stats span {
+  margin-left: 0.5rem;
+}
+.video-description {
+  background-color: #1E293B;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.divider {
+  border: none;
+  border-top: 1px solid #334155;
+  margin: 2rem 0;
+}
+/* --- Yorumlar Bölümü CSS --- */
+.comments-section h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.comment-form {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+.comment-form textarea {
+  flex-grow: 1;
+  background-color: #0F172A;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  color: #E2E8F0;
+  padding: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+}
+.comment-form button {
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: #38BDF8;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.comment-form button:hover {
+  background-color: #0EA5E9;
+}
+.comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.comment-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.comment-content {
+  display: flex;
+  flex-direction: column;
+}
+.comment-author {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #F8FAFC;
+}
+.comment-date {
+  font-weight: 400;
+  color: #94A3B8;
+  margin-left: 0.5rem;
+}
+.comment-text {
+  font-size: 1rem;
+  color: #E2E8F0;
+  margin: 0.25rem 0 0 0;
+}
+/* --- Navbar Arama Çubuğu Stilleri --- */
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+}
+.search-form {
+  display: flex;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid #334155;
+  border-radius: 25px;
+  overflow: hidden; 
+}
+.search-form input {
+  flex-grow: 1; 
+  padding: 0.75rem 1.25rem;
+  border: none;
+  background-color: #0F172A; 
+  color: #E2E8F0;
+  outline: none; 
+  font-size: 1.1rem;
+}
+.search-form button {
+  background-color: #334155; 
+  color: #E2E8F0;
+  border: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.search-form button:hover {
+  background-color: #475569; 
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #F8FAFC;
+}
+a, 
+button, 
+.video-card {
+  transition: all 0.2s ease-in-out;
+}
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.search-form input:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.comment-form textarea:focus {
+  border-color: #38BDF8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.3);
+  outline: none;
+}
+.sidebar-links li a:hover,
+.sidebar-links li a:focus {
+  color: #38BDF8;
+  padding-left: 0.25rem;
+}
+.nav-button-primary {
+  background-color: #38BDF8;
+  color: #FFFFFF !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+
+  display: flex;
+  align-items: center;
+}
+.nav-button-primary:hover {
+  background-color: #0EA5E9;
+  color: #FFFFFF !important;
+}
+.nav-button-destructive {
+  color: #F87171;
+  font-weight: 600;
+}
+.nav-button-destructive:hover {
+  color: #DC2626;
+  background-color: rgba(220, 38, 38, 0.1);
+}
+.placeholder-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  color: #94A3B8;
+}
+.placeholder-page h2 {
+  color: #F8FAFC;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.placeholder-page p {
+  font-size: 1.1rem;
+  margin: 0.25rem 0;
+}
