@@ -111,3 +111,8 @@ This project includes a custom "Video View Counter" metric.
 
 * Every time a user views a video detail page, the backend increments a Prometheus counter (video_views_total).
 * This data is visualized in Grafana to track popular content in real-time.
+
+
+
+📄 License
+This project is licensed under the MIT License - see the LICENSE file for details. Copyright (c) 2025 YusufTufan
